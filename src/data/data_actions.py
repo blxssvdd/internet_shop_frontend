@@ -79,9 +79,10 @@ def login(email: str, password: str, url: str = TOKEN_URL):
     resp = requests.post(url, json=body)
     if resp.status_code == 200:
         session.update(resp.json())
-        flash("Вхід успішний!")
+        return("Вхід успішний!")
     else:
         flash("Логін або пароль не вірний.")
+
 
 
 def get_user(url: str = USER_URL):

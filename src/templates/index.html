@@ -12,9 +12,12 @@
              <img class="card-img-top embed-responsive-item" src="{{ product.img_url }}" />
           </div>
           <div class="card-body">
-            <h2 class="h5 card-title">{{ product.name }}/{{ product.price }}</h2>
-            <p class="card-text">{{ product.description }}</p>
+            <h2 class="h5 card-title">{{ product.name|truncate(30) }}</h2>
+            <p class="card-text">{{ product.description|truncate(50) }}</p>
+            <p class="card-text">
+              {{ product.price }} грн
             <a href="{{ url_for('get_product', id=product.id) }}" class="btn btn-sm btn-primary">Про товар</a>
+          </p>
           </div>
         </div>
       </div>
